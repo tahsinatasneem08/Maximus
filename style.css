@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+    font-family: "DM Sans", sans;
+}
+
+/* ============== */
+/* NAVIGATION BAR */
+/* ============== */
+
+.navbar-container{
+    position: fixed;
+    width: 12%;
+    height: 100vh;
+    padding: 20px 40px;
+    background-color: rgb(32, 57, 96);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgb(56, 80, 131, 0.4);
+    box-shadow: 0px 10px 10px rgba(22, 28, 78, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:flex-start;
+    z-index: 1000;
+    transition: 0.4s ease;
+}
+
+.navbar-container:hover{
+    background-color:rgb(90, 162, 98);
+    border: 1px solid rgba(91, 136, 53, 0.4);
+}
+
+.navbar-container nav{
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.navbar-container nav a{
+    position: relative;
+    text-decoration: none;
+    font-family: "Consolas", monospace;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-bottom: 50px;
+    align-items: baseline;
+}
+
+.navbar-container nav a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 4px;
+    border-radius: 20px;
+    background-color: rgb(53, 105, 59);
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+.navbar-container nav a:hover::after{
+    width: 100%;
+}
+
+.watermark{
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+.watermark span{
+    color: rgb(235, 208, 133);
+}
+
+
+/* ============== */
+/*  HERO SECTION  */
+/* ============== */
+
+
+.hero-container{
+    height: 100vh;
+    background: rgb(239, 220, 167);
+    overflow: hidden;
+}
+
+.hero-content{
+   position: relative;
+   width: 700px;
+   left: 17%;
+   top: 45%;
+   transform: translateY(-50%);
+}
+
+.hero-content img{
+    width: 30%;
+    height: 30%;
+}
+
+.hero-content h1{
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-content h1 span{
+    color: rgb(32, 57, 96);
+}
+
+.hero-content p{
+    font-family: "Consolas", monospace;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.1;
+    color:rgb(32, 57, 96);
+    margin-top: 10px;
+    line-height: 2;
+}
+
+.hero-content p span{
+    transition: 0.4s;
+}
+
+.hero-content p span:hover{
+    font-weight: 1000;
+    color: rgb(207, 67, 90);
+}
+
+.hooman:hover{
+    font-weight: 1000 !important;
+    color: rgb(80, 161, 39) !important;
+}
+
+.misc:hover{
+    font-weight: 1000 !important;
+    color: rgb(144, 82, 183) !important;
+}
+
+.hero-btn{
+    background:rgb(32, 57, 96);
+    border-radius: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 200px;
+    padding: 10px 20px;
+    display: flex;
+    transition: 0.3s;
+}
+
+.hero-btn a{
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+    font-weight: 600;
+}
+
+.hero-btn:hover{
+    background-color:rgb(90, 162, 98);
+    transform: translateY(-12px);
+}
+
