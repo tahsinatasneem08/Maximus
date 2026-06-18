@@ -93,16 +93,23 @@ body{
 
 .hero-container{
     height: 100vh;
-    background: rgb(239, 220, 167);
+    background-image: url("assets/hero-bg.png");
+    background-size:cover;
     overflow: hidden;
+    
 }
 
 .hero-content{
    position: relative;
    width: 700px;
-   left: 17%;
-   top: 45%;
+   left: 30%;
+   top: 48%;
    transform: translateY(-50%);
+   display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical centering */
+  align-items: center;     /* Horizontal centering */
+  text-align: center;
 }
 
 .hero-content img{
