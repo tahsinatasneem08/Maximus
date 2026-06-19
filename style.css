@@ -257,7 +257,7 @@ body{
 .left-card{
     width: 400px;
     height: 560px;
-
+    margin-left: 160px;
     position: relative;
 
     transform-style: preserve-3d;
