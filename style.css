@@ -22,7 +22,7 @@ body{
     width: 12%;
     height: 100vh;
     padding: 20px 40px;
-    background-color: rgb(32, 57, 96);
+    background-color: rgb(32, 57, 96, 0.5);
     backdrop-filter: blur(18px);
     border: 1px solid rgb(56, 80, 131, 0.4);
     box-shadow: 0px 10px 10px rgba(22, 28, 78, 0.4);
@@ -35,7 +35,7 @@ body{
 }
 
 .navbar-container:hover{
-    background-color:rgb(90, 162, 98);
+    background-color:rgb(90, 162, 98,0.6);
     border: 1px solid rgba(91, 136, 53, 0.4);
 }
 
@@ -106,10 +106,10 @@ body{
    top: 48%;
    transform: translateY(-50%);
    display: flex;
-  flex-direction: column;
-  justify-content: center; /* Vertical centering */
-  align-items: center;     /* Horizontal centering */
-  text-align: center;
+   flex-direction: column;
+   justify-content: center; /* Vertical centering */
+   align-items: center;     /* Horizontal centering */
+   text-align: center;
 }
 
 .hero-content img{
@@ -118,6 +118,7 @@ body{
 }
 
 .hero-content h1{
+    font-family: "Pixelify Sans", sans-serif;
     font-size: 50px;
     font-weight: 700;
     line-height: 1.1;
@@ -131,10 +132,10 @@ body{
     font-family: "Consolas", monospace;
     font-size: 17px;
     font-weight: 500;
-    line-height: 1.1;
-    color:rgb(32, 57, 96);
+    color:rgb(19, 34, 57);
     margin-top: 10px;
-    line-height: 2;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(88, 106, 156, 0.5);
 }
 
 .hero-content p span{
@@ -157,7 +158,8 @@ body{
 }
 
 .hero-btn{
-    background:rgb(32, 57, 96);
+    background: linear-gradient(to bottom, rgb(32, 57, 96), rgb(66, 121, 73));
+    box-shadow: 0px 10px 20px rgb(39, 79, 116);
     border-radius: 22px;
     display: flex;
     justify-content: center;
@@ -171,13 +173,166 @@ body{
 
 .hero-btn a{
     text-decoration: none;
+    font-family: "Consolas", monospace;  
     font-size: 17px;
     color: white;
     font-weight: 600;
 }
 
 .hero-btn:hover{
-    background-color:rgb(90, 162, 98);
+    background: linear-gradient(to bottom, rgb(66, 121, 73), rgb(238, 191, 96));
     transform: translateY(-12px);
+}
+
+
+/* ================== */
+/*  WHO AM I SECTION  */
+/* ================== */
+
+.who-container{
+    min-height: 70vh;
+    padding: 20px 40px;
+    background-color: rgb(251, 255, 235);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.who-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 90px;
+
+    width: fit-content;
+
+    margin-left: 350px;
+    transform: translateX(-80px);
+}
+
+/* CARD WRAPPER */
+
+.card-wrapper{
+    perspective: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+/* HIDE bubble by default */
+.text-bubble{
+    opacity: 0;
+    transform: translateX(-10px);
+    pointer-events: none;
+    transition: 0.3s ease;
+
+    /* pixel bubble look */
+    background: #222222;
+    border: 3px solid rgb(50, 74, 139);
+    padding: 12px 16px;
+    font-family: "Consolas", monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color:rgb(102, 224, 37);
+    text-shadow: 0px 0px 20px green;
+
+    /* pixelated feel */
+    image-rendering: pixelated;
+
+    /* optional retro look */
+    box-shadow: 4px 4px 0px rgb(44, 77, 138);
+}
+
+/* SHOW on hover */
+.card-wrapper:hover .text-bubble{
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+/* LEFT CARD */
+
+.left-card{
+    width: 400px;
+    height: 560px;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.3s ease;
+
+    cursor: grab;
+    border-radius: 23px;
+
+    box-shadow: 0px 10px 50px rgb(67, 60, 50);
+    will-change: transform;
+}
+
+/* BOTH SIDES */
+
+.card-face{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 25px;
+
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+/* FRONT */
+
+.card-front{
+    background-image: url("assets/id-card-cover.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* BACK */
+
+.card-back{
+    background: url("assets/id-card.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* DETAILS */
+
+.who-details{
+    margin-top: 200px;
+    margin-left: 45px;
+    margin-right: 35px;
+    display: flex;
+    justify-content:center;
+    gap: 7px;
+}
+
+.who-keys-left,
+.who-values-right{
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(244, 228, 164);
+    display: flex;
+    flex-direction: column;
+}
+
+.who-keys-left p,
+.who-values-right p{
+    margin: 0;
 }
 
